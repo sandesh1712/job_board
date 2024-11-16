@@ -1,0 +1,26 @@
+<div id="companies" class="container-sm container-fluid">
+   <h1>All Companies </h1>
+   <ul class="list-group">
+      <% @companies.each_with_index do |company ,index| %>
+        <li class="list-group-item">
+          <div class="float-start">
+            <h1>
+              <a class="link-info link-underline-opacity-0" href=<%= company_detail_path company.id %> >
+                 <%=company.name%>
+              </a>
+            </h1>
+            <div>
+              <p>Location: <%=company.city %></p>
+              <div>
+                <%="#{company.info[0..100]}..."%>
+              </div>
+              <p><%=company.email%></p>
+            </div>
+          </div>
+          <div class="float-end">
+            <img alt="" class="img-thumbnail" src=<%=company.thumbnail_url%>/>
+          </div>
+        </li>
+     <% end %>
+   </ul>
+</div>
