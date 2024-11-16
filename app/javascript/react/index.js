@@ -1,0 +1,1 @@
+import './components/company/reviews/index'

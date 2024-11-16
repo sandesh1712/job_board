@@ -1,0 +1,32 @@
+<div class="container w-50 m-auto">
+  <div class="text-center">
+    <h1 id="new_job_header">Create A New Job</h1>
+  </div>
+  <hr>
+
+  <% if notice.present? %>
+    <div class=<%"alert #{notice[:type] == 'success' ? 'alert-success' : 'alert-danger' }"%>>
+     <p><%=notice[:msg]%></p>
+   </div>
+  <% end %>
+
+  <%= form_with model: @job, url: create_job_url ,local: true do |form| %>
+      <div class="actions mb-3 text-center">
+       <%= form.submit "Create Job", class: "btn btn-lg btn-primary" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :title%>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+       <%= form.label :description%>
+       <%= form.text_area :description, class: 'form-control' %>
+      </div>
+      <div id="new_fields">
+         <p> You can Add Custom Questions by clicking on below button</p>
+      </div>
+  <% end %>
+  <div>
+    <button data-id="new-question-btn" class="form-control btn btn-outline-primary">Add Question</button>
+  </div>
+</div>

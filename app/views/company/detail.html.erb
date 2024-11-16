@@ -1,0 +1,29 @@
+<div id="company_detail container-md grid">
+
+  <div class="row text-center mt-5 p-2">
+    <div class="col-4 text-start w-50">
+      <div>
+        <h1><%=@company.name %></h1>
+      </div>
+      <div>
+        <p><%=@company.info%></p>
+        <p>
+          <b>Head Count</b>: <%=@company.employee_head_count %>
+        </p>
+        <p>
+          <b>Location</b>: <%=@company.city%>
+        </p>
+     </div>
+   </div>
+    <div class="col-4 text-end">
+      <img src="<%=@company.profile_image%>" alt=""/>
+    </div>
+  </div>
+  <div id="reviews_container"
+       class="row p-2 m-2 border-black border"
+       <%if current_user %>
+         data-user-id="<%=current_user.id%>"
+       <% end %>
+       data-company-id="<%=@company.id%>">
+  </div>
+</div>
