@@ -58,7 +58,6 @@ function Reviews({company_id,user_id}){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("loading react")
     const element = document.getElementById("reviews_container");
     const company_id = element.getAttribute("data-company-id");
     const user_id = element.getAttribute("data-user-id")??null;

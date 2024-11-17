@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "company#list"
   get "company/list" => "company#list"
-  get "company/detail/:id" => "company#detail" , as: :company_detail
+  get "api/company/list" => "company#api_list_autocomplete", as: :api_company_list
+  get "company/detail/:id" => "company#detail", as: :company_detail
+  get "api/reviews/company/:company_id" => "reviews#api_company_reviews", as: :api_company_reviews
 
-  get "reviews/company/:company_id" => "reviews#company_reviews" , as: :company_review
-  post "reviews/create" => "reviews#create" , as: :create_review
+  post "reviews/create" => "reviews#create", as: :create_review
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
