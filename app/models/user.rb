@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :reviews, dependent: :destroy
+
+  belongs_to :company, optional: true
+
+  USER_ROLES={
+    "user": 0,
+    "admin": 1,
+    "recruiter": 2
+  }
 end
