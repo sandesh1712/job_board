@@ -4,9 +4,9 @@
   </div>
   <hr>
 
-  <% if notice.present? %>
-    <div class=<%"alert #{notice[:type] == 'success' ? 'alert-success' : 'alert-danger' }"%>>
-     <p><%=notice[:msg]%></p>
+  <% if alert.present? %>
+    <div class=<%="alert #{alert.type == 'success' ? 'alert-success' : 'alert-danger' }"%>>
+     <p><%=alert.msg%></p>
    </div>
   <% end %>
 
